@@ -328,28 +328,28 @@ class TernarySearchTrie
 
   searchWithinHammingDistance: (query, distance, callback) ->
     a = toCodePoints query
-    @traverse_ @root_, (key, node) ->
+    @traverse_ @root_, (key, value) ->
       b = toCodePoints key
       return if a.length != b.length
-      callback key, node.v if calcHammingDistance(a, b) <= distance
+      callback key, value if calcHammingDistance(a, b) <= distance
       return
     return this
 
   searchWithinLevenshteinDistance: (query, distance, callback) ->
     a = toCodePoints query
-    @traverse_ @root_, (key, node) ->
+    @traverse_ @root_, (key, value) ->
       b = toCodePoints key
       return if Math.abs(a.length - b.length) > distance
-      callback key, node.v if calcLevenshteinDistance(a, b) <= distance
+      callback key, value if calcLevenshteinDistance(a, b) <= distance
       return
     return this
 
   searchWithinDamerauLevenshteinDistance: (query, distance, callback) ->
     a = toCodePoints query
-    @traverse_ @root_, (key, node) ->
+    @traverse_ @root_, (key, value) ->
       b = toCodePoints key
       return if Math.abs(a.length - b.length) > distance
-      callback key, node.v if calcDamerauLevenshteinDistance(a, b) <= distance
+      callback key, value if calcDamerauLevenshteinDistance(a, b) <= distance
       return
     return this
 
