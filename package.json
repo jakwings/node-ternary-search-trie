@@ -1,12 +1,13 @@
 {
   "name": "node-ternary-search-trie",
-  "version": "5.4.2",
+  "version": "5.4.3",
   "description": "A simple class for ternary search trie in Node.js™.",
   "author": "Jak Wings <jakwings@gmail.com>",
   "main": "lib/trie.js",
   "scripts": {
-    "test": "node_modules/gulp/bin/gulp.js test",
-    "prepublish": "node_modules/gulp/bin/gulp.js build"
+    "test": "gulp test",
+    "build": "gulp build",
+    "prepublishOnly": "gulp build"
   },
   "files": [
     "LICENSE",
@@ -15,12 +16,7 @@
     "lib",
     "src"
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jakwings/node-ternary-search-trie/blob/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:jakwings/node-ternary-search-trie.git"
