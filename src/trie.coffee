@@ -295,7 +295,7 @@ class TernarySearchTrie
     root = @find_ @root_, codepoints
     return if !root?
     callback prefix, root if root.v?
-    @traverse_ root.m, (key, node) -> callback prefix + key, node.v
+    @traverse_ root.m, (key, value) -> callback prefix + key, value
     return this
 
   keysWithCommonPrefix: (key) ->
@@ -389,13 +389,13 @@ class TernarySearchTrie
             ps.push prefix
             prefix += fromCodePoint root.c
             if root.v?
+              result.done = false
               if callback?
                 result.value = {key: prefix, node: root}
                 result = callback result
               else
                 result.value = {key: prefix, value: root.v}
               root = root.m
-              result.done = false
               return result
             else
               root = root.m
