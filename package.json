@@ -1,6 +1,6 @@
 {
   "name": "node-ternary-search-trie",
-  "version": "5.4.3",
+  "version": "5.4.4",
   "description": "A simple class for ternary search trie in Node.js™.",
   "author": "Jak Wings <jakwings@gmail.com>",
   "main": "lib/trie.js",
