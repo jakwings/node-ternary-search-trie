@@ -96,6 +96,8 @@ describe 'keysWithPrefix(prefix)', ->
       '!!!DONT_DELETE_ME_ABDE'
       '!!!DONT_DELETE_ME_ABDEF'
     ].sort()
+    trie.searchWithPrefix '!!!DONT_DELETE_ME_A', (key, value) ->
+      key.should.equal value
     keys = trie.keysWithPrefix '!!!DONT_DELETE_ME_'
     keys.length.should.equal data.length
     key.should.equal data[i] for key, i in keys

@@ -294,7 +294,7 @@ class TernarySearchTrie
     codepoints = toCodePoints prefix
     root = @find_ @root_, codepoints
     return if !root?
-    callback prefix, root if root.v?
+    callback prefix, root.v if root.v?
     @traverse_ root.m, (key, value) -> callback prefix + key, value
     return this
 
