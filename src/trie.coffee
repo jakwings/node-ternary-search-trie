@@ -331,7 +331,8 @@ class TernarySearchTrie
     @traverse_ @root_, (key, value) ->
       b = toCodePoints key
       return if a.length != b.length
-      callback key, value if calcHammingDistance(a, b) <= distance
+      d = calcHammingDistance(a, b)
+      callback key, value, d if d <= distance
       return
     return this
 
@@ -340,7 +341,8 @@ class TernarySearchTrie
     @traverse_ @root_, (key, value) ->
       b = toCodePoints key
       return if Math.abs(a.length - b.length) > distance
-      callback key, value if calcLevenshteinDistance(a, b) <= distance
+      d = calcLevenshteinDistance(a, b)
+      callback key, value, d if d <= distance
       return
     return this
 
@@ -349,7 +351,8 @@ class TernarySearchTrie
     @traverse_ @root_, (key, value) ->
       b = toCodePoints key
       return if Math.abs(a.length - b.length) > distance
-      callback key, value if calcDamerauLevenshteinDistance(a, b) <= distance
+      d = calcDamerauLevenshteinDistance(a, b)
+      callback key, value, d if d <= distance
       return
     return this
 
