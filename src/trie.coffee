@@ -290,10 +290,10 @@ class TernarySearchTrie
     return items
 
   searchWithPrefix: (prefix, callback) ->
-    return if prefix.length < 1
+    return this if prefix.length < 1
     codepoints = toCodePoints prefix
     root = @find_ @root_, codepoints
-    return if !root?
+    return this if !root?
     callback prefix, root.v if root.v?
     @traverse_ root.m, (key, value) -> callback prefix + key, value
     return this
@@ -304,7 +304,7 @@ class TernarySearchTrie
     return items
 
   searchWithCommonPrefix: (key, callback) ->
-    return if key.length < 1 or !@root_?
+    return this if key.length < 1 or !@root_?
     prefix = ''
     @walk_ @root_, toCodePoints(key), (node) ->
       prefix += fromCodePoint node.c
