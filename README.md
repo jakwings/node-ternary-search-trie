@@ -1,9 +1,9 @@
 ### A simple class for ternary search trie implemented in JavaScript.
 
 [![Build Status](https://travis-ci.org/jakwings/node-ternary-search-trie.svg)](https://travis-ci.org/jakwings/node-ternary-search-trie)
-[![NPM version](https://badge.fury.io/js/node-ternary-search-trie.svg)](http://badge.fury.io/js/node-ternary-search-trie)
+[![NPM version](https://badge.fury.io/js/node-ternary-search-trie.svg)](https://badge.fury.io/js/node-ternary-search-trie)
 
-It is unstable and not for production use.
+It is unstable and *not for production use*. ;)
 
 You can install it via `npm install node-ternary-search-trie`, or just
 include the script `lib/trie.js` in your web pages.
@@ -67,15 +67,15 @@ Public methods (with simple Unicode support):
 
     Just like `keysWithCommonPrefix`.
 
-*   `searchWithinHammingDistance(key, distance, callback: (key, value) -> void) -> this`
+*   `searchWithinHammingDistance(key, distance, callback: (key, value, distance) -> void) -> this`
 
     Just like `keysWithinHammingDistance`.
 
-*   `searchWithinLevenshteinDistance(key, distance, callback: (key, value) -> void) -> this`
+*   `searchWithinLevenshteinDistance(key, distance, callback: (key, value, distance) -> void) -> this`
 
     Just like `keysWithinLevenshteinDistance`.
 
-*   `searchWithinDamerauLevenshteinDistance(key, distance, callback: (key, value) -> void) -> this`
+*   `searchWithinDamerauLevenshteinDistance(key, distance, callback: (key, value, distance) -> void) -> this`
 
     Just like `keysWithinDamerauLevenshteinDistance`.
 
